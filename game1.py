@@ -13,13 +13,18 @@ BLUE = (0, 0, 255)
 BROWN = (224, 161, 52)
 
 screen = pygame.display.set_mode((screen_width, screen_height))
-pygame.display.set_caption('Blue background with brown rectangle')
+pygame.display.set_caption('A beautiful beach')
+
+
+def draw_background(screen):
+    water=pygame.image.load("")
+
 
 # main loop
 running = True
 while running:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type==(pygame.QUIT):
             running = False
 
     # fill screen with blue
