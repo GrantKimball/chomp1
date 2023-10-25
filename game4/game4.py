@@ -19,9 +19,9 @@ pygame.display.set_caption('A School of Moving Fish')
 clock=pygame.time.Clock()
 
 def draw_background(surf):
-    water=pygame.image.load("assets/sprites/water.png").convert()
-    sand=pygame.image.load("assets/sprites/sand_top.png").convert()
-    seagrass=pygame.image.load("assets/sprites/seagrass.png").convert()
+    water=pygame.image.load("../assets/sprites/water.png").convert()
+    sand=pygame.image.load("../assets/sprites/sand_top.png").convert()
+    seagrass=pygame.image.load("../assets/sprites/seagrass.png").convert()
 
     sand.set_colorkey((0,0,0))
     seagrass.set_colorkey((0,0,0))
@@ -42,7 +42,7 @@ def draw_background(surf):
 
     #draw text
     # load font into game
-    custom_font = pygame.font.Font("assets/fonts/electrical.ttf", 50)
+    custom_font = pygame.font.Font("../assets/fonts/electrical.ttf", 50)
     text=custom_font.render('Chomp', True, (255,0,0))
     surf.blit(text, (screen_width/2-text.get_width()/2, screen_height-550-text.get_height()/2))
 
@@ -54,7 +54,7 @@ draw_background(background)
 
 #draw fish
 for _ in range(5):
-    fishes.add(Fish(random.randint(0,screen_width-2*tile_size), random.randint(0,screen_height-2*tile_size)))
+    fishes.add(Fish(random.randint(screen_width,screen_width*2), random.randint(tile_size,screen_height*2)))
 
 while running:
     for event in pygame.event.get():
