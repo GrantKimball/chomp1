@@ -15,7 +15,7 @@ draw_background(background)
 
 while running:
     for event in pygame.event.get():
-        print(event)
+        #print(event)
         if event.type == pygame.QUIT:
             running = False
         if event.type==pygame.KEYDOWN:
@@ -23,6 +23,10 @@ while running:
                 print('pressed key up')
             if event.key==pygame.K_DOWN:
                 print('pressed key down')
+            if event.key==pygame.K_LEFT:
+                print('pressed key left')
+            if event.key==pygame.K_RIGHT:
+                print('pressed key right')
      # draw background
     screen.blit(background, (0, 0))
 
